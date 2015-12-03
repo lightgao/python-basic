@@ -1,0 +1,35 @@
+
+# region: {{AWS_REGION}}
+region: "ap-southeast-2"
+
+namespace: "ThirdPartyServiceStatus"
+
+# reporter: {{AppName}}
+reporter: "RCAContract"
+
+services:
+    ee_contract_adaptor:
+        name: "EEContractAdaptor"
+        url: {{EEContractAdaptorUrl}}
+        check_path: "/diagnostic/version"
+        timeout: 10
+    crm_session_service:
+        name: "CRMSessionService"
+        url: {{CRMSessionServiceUrl}}
+        check_path: "/diagnostic/version"
+        timeout: 10
+    bdm_service:
+        name: "BDMService"
+        url: {{BDMServiceUrl}}
+        check_path: "/diagnostic/version"
+        timeout: 10
+    contract_service:
+        name: "ContractService"
+        url: {{ContractServiceUrl}}
+        check_path: "/diagnostic/status/nagios"
+        timeout: 10
+    company_service:
+        name: "CompanyService"
+        url: {{CompanyServiceUrl}}
+        check_path: "/diagnostic/version"
+        timeout: 10
