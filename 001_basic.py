@@ -2,6 +2,9 @@
 #coding=utf-8
 
 
+# ======= Python Basic Tutorial
+# http://www.tutorialspoint.com/python/index.htm
+
 
 
 
@@ -229,14 +232,40 @@ del dict ;                      # 删除整个dict
 1 in [1,2,3] == True                                # Membership Operators : "in, not in"
 
 
-str='abc'; s1=str; s2=str; s1 is s2 == True         # Identity Operators : "is, is not"
+ss='abc'; s1=ss; s2=ss; s1 is s2 == True         # Identity Operators : "is, is not"
                                                     # 与 “id(x) == id(y)” 一个效果
-id(str)                                             # 返回数据的内存地址
+id(ss)                                             # 返回数据的内存地址
 
 
 
-type(str)                                           # 返回数据的类型：数字／序列／函数
+type(ss) == str                                           # 判断数据的类型 type()
+isinstance(ss, str)                                       #              isinstance()
 
+i=123; isinstance(i, int)==True
+s='abc'; isinstance(s, str)==True
+b=b'ACSII'; isinstance(b, bytes)==True
+
+# >> 基础 Types in python:
+# str                       # 由字符组成的不可更改序列
+# bytes                     # 由字节组成的不可更改序列
+# list, tuple               # 有序的
+# set, frozenset            # 无序的，每个元素唯一
+# dict
+# int, float, complex
+# bool
+
+# >> 基础 types 之间的继承关系
+# object
+#     int
+#         bool              # bool是一种int
+#     long                  # long 与 int 同级别
+#     float, complex
+#     basestring            # basestring
+#         str
+#         unicode
+#         bytes
+#     list, tuple, dict
+#     set, frozenset
 
 
 
@@ -539,6 +568,29 @@ ticks1 = calendar.timegm(utctime)     # struct_time -> Ticks, inverse of time.gm
 # A return statement with no arguments is the same as return None.
 # 不明确写return语句时，返回None；有return语句但没有参数时，也返回None
 
+def mindatapos( a, s, e ) :
+    if e<=s :
+        return 0, -1;
+    minvar = a[s]
+    minpos = s
+    for i in range(s+1,e) :
+        if a[i] < minvar :
+            minvar = a[i]
+            minpos = i
+    return minvar, minpos                             # 返回多个参数
+
+def maxdatapos( a, s, e ) :
+    if e<=s :
+        return 0, -1;
+    maxvar = a[s]
+    maxpos = s
+    for i in range(s+1,e) :
+        if a[i] > maxvar :
+            maxvar = a[i]
+            maxpos = i
+    return maxvar, maxpos                             # 返回多个参数
+
+
 
 def printinfo( name, age = 35 ):                      # 参数默认值
    "This prints a passed info into this function"
@@ -836,8 +888,5 @@ try:
    raise Networkerror("Bad hostname")
 except Networkerror,e:
    print e.args
-
-
-
 
 
