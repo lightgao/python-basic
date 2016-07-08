@@ -391,6 +391,10 @@ print "My name is %s and weight is %d kg!" % ('Zara', 21)       # string formati
 # maketrans(), translate(table, deletechars="")
 
 
+# https://docs.python.org/2/library/string.html
+print '{0}, {1}, {2}'.format('a', 'b', 'c')
+print 'Coordinates: {latitude}, {longitude}'.format(latitude='37.24N', longitude='-115.81W')
+
 
 # =======================================================================
 # List：
