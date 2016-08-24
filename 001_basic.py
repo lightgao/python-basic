@@ -671,6 +671,12 @@ sum1(10,20); print total                                                # => 30
 import math; dir(math)
 
 
+# help()        # python的内建函数, 返回传入的module的详细使用说明
+                # 非常有用~~~!!!!!
+help(math)
+
+
+
 locals()
 #               it called from within a function,
 #               it will return a dict with all variables/methods that can be accessed locally from that function.
